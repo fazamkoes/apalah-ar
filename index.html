@@ -17,17 +17,33 @@
             line-height: 23px;
             background-color: #f4f4f4;
         }
-        
         /* Header */
         header {
-            background-color: #2471A3;
-            text-align: center;
-            padding: 50px 10px 10px;
+        position: relative;
+        background: url('img/bunga.jpg') no-repeat center center/cover;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        }
+        /* Semi-transparent overlay */
+        header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Adjust transparency as needed */
+        z-index: 1; /* Ensures the overlay stays below text */
         }
         header h1 {
-            color: white;
-            font-size: 30px;
-            font-family: 'Unbounded', cursive;
+        position: relative;
+        color: white;
+        font-size: 40px;
+        font-family: 'Unbounded', cursive;
+        z-index: 2; /* Higher than the overlay */
         }
         header img {
             border-radius: 50%;
@@ -130,13 +146,12 @@
 </head>
 <body>
     <header>
-        <img src="img/cover.jpg">
         <h1>Apasi Ar</h1>
     </header>
     
     <main>
-        <h2>Welcome</h2>
-        <p>Content goes here...</p>
+        <h2>Halo halo</h2>
+        <p>Sejujurnya, I don't really know what to say here but one thing's for sure, ini website rada cringe. It's also a bit underwhelming karena you have really high expectations about this website when in reality, ya cuman gitu2 doang... Either way, I try to put in things you might like (walaupun for now baru ada 2) so I hope that no matter how underwhelming this has been/will be, it'd still make up for it. Semoga suka yaaa. Aku minta maaf karena untuk sekarang hanya ada ini doang.</p>
     </main>
     
     <section class="video-container">
@@ -146,21 +161,124 @@
         </div>
     </section>
     
-    <section class="buttons-container">
-        <h2>Choose an Option</h2>
-        <div class="button-item">
-            <button id="yes-btn" onclick="redirectToYesVideo()">Yes</button>
-            <button id="no-btn" onclick="redirectToNoVideo()">No</button>
-        </div>
-    </section>
-    
-    <section class="folders-container">
+    <section class="archives-container">
+    <h2>Archives</h2>
+    <p>Because looking back at the photos of us reminds me of the time we had</p>
+
+    <div class="folders-container">
         <div class="folder" onclick="openFolder('folder1')">
             <img src="img/bunga.jpg" alt="Folder 1 Preview">
-            <p>Folder 1: 310125</p>
+            <p>Folder 1: Musim Exam</p>
+        </div>
+    </div>
+    </section>
+
+    <style>
+    .archives-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px; /* Reduce padding */
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    }
+
+    .archives-container h2 {
+    color: #1A5276;
+    font-size: 24px;
+    margin-bottom: 5px; /* Reduce bottom margin */
+    }
+
+    .archives-container p {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 15px; /* Reduce space below */
+    }
+
+    .folders-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    }
+
+    .folder {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    max-width: 200px;
+    }
+
+    .folder:hover { 
+    transform: scale(1.05); 
+    }
+
+    .folder img { 
+    width: 100%; 
+    border-radius: 5px; 
+    }
+
+    .folder p { 
+    font-weight: bold; 
+    color: #1A5276; 
+    margin-top: 10px; 
+    }
+    </style>
+
+    <section class="playlists-container">
+        <h2>Playlists</h2>
+        <p>Because music has always meant the most (as you may be) to me</p>
+    
+        <div class="playlist-item">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/50Gknr6pdaEF5sKr5R7kqa?si=19d55542513343dd" width="100%" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+    
+        <div class="playlist-item">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3V9OKAwyt2fq490uYBLm2l?si=6205b62cf80249a8" width="100%" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+    
+        <div class="playlist-item">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6yFxZzAylT19qAOUtdffu3?si=fb455bfe1b2144fd" width="100%" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
         </div>
     </section>
-    
+
+    <style>
+    .playlists-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    }
+
+    .playlists-container h2 {
+    color: #1A5276;
+    font-size: 24px;
+    }
+
+    .playlists-container p {
+    color: #666;
+    font-style: italic;
+    }
+
+    .playlist-item {
+    margin: 15px 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .playlist-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+    </style>
+
     <footer>
         <p>&copy; 2025 Apasi Ar. All rights reserved.</p>
     </footer>

@@ -26,6 +26,12 @@
             font-family: 'Unbounded', cursive;
         }
 
+        header p {
+        color: white; /* Make text white */
+        margin-top: -5px; /* Adjust spacing */
+        font-size: 14px; /* Make text a bit smaller */
+        }
+
         .photo-gallery {
             display: grid;
             grid-template-columns: repeat(4, 1fr); /* 4 images per row */
@@ -36,9 +42,12 @@
         }
 
         .photo-item {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         }
 
         .photo-item img {
@@ -54,21 +63,23 @@
 
         /* Overlay */
         .photo-item .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6); /* Dark layer */
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            text-align: center;
-            padding: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        padding: 5px;
+        text-align: center;
+        padding: 10px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
         }
 
         .photo-item:hover .overlay {
@@ -80,7 +91,7 @@
 <body>
     <header>
         <h1>Musim Exam</h1>
-        <p>Because in the midst of all the stress, I know I can turn to you for comfort.</p>
+        <p>Because in the midst of all the stress, I know I turn to you for comfort.</p>
     </header>
 
     <div class="photo-gallery">
@@ -90,95 +101,95 @@
         </div>
         <div class="photo-item">
             <img src="img/bunga.jpg" alt="Beautiful Flower">
-            <div class="overlay">Beautiful Flower</div>
+            <div class="overlay">you asked me, that day, why i got you these. i guess its the same reason as to why i fell for you</div>
         </div>
         <div class="photo-item">
             <img src="img/bungar.jpg" alt="Red Flower">
-            <div class="overlay">Red Flower</div>
+            <div class="overlay">bunganya cakep, orgnya lebih cakep lagi</div>
         </div>
         <div class="photo-item">
             <img src="img/cover.jpg" alt="Classic Car">
-            <div class="overlay">Classic Car</div>
+            <div class="overlay">seandainya gw ga selalu pose pake jempol</div>
         </div>
         <div class="photo-item">
             <img src="img/belajar.jpg" alt="Shark Model">
-            <div class="overlay">Shark Model</div>
+            <div class="overlay">manusia sibuk, yg sampingnya ga sibuk. but i was happy to be there with you anyway</div>
         </div>
         <div class="photo-item">
             <img src="img/jempol.jpg" alt="Shark Close-up">
-            <div class="overlay">Shark Close-up</div>
+            <div class="overlay">bajunya ilang gatau kemana. pengen beli lagi tp gatau merk apaan hua</div>
         </div>
         <div class="photo-item">
             <img src="img/jempolpucks.jpg" alt="Studying Hard">
-            <div class="overlay">Studying Hard</div>
+            <div class="overlay">jempolan jelek</div>
         </div>
         <div class="photo-item">
             <img src="img/kopi.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">ini hot chocolate gw yang selalu diketawain sama lu</div>
         </div>
         <div class="photo-item">
             <img src="img/pucks.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">katanya gamau ngajak org lain ke sini</div>
         </div>
         <div class="photo-item">
             <img src="img/leha.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">manusia secakep ini makannya di leha brooo</div>
         </div>
         <div class="photo-item">
             <img src="img/basrob.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">motonya ga niat gitu</div>
         </div>
         <div class="photo-item">
             <img src="img/basrob2.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">i never got the chance to say this tp maaf yaa flashnya terang bgt</div>
         </div>
         <div class="photo-item">
             <img src="img/beans.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">kapan mau belajar brg lagi? semangat gitu klo depan gw ada lu ahay</div>
         </div>
         <div class="photo-item">
             <img src="img/hotbird.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">makanannya enak tp kamunya lagi ga oke. maaf yaaa i didnt do much to help you that day</div>
         </div>
         <div class="photo-item">
             <img src="img/hotbirdar.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">pas capek tetep aja secakep itu</div>
         </div>
         <div class="photo-item">
             <img src="img/jempol3.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">stop jempol</div>
         </div>
         <div class="photo-item">
             <img src="img/sharky.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">ini lucu bgt demnn</div>
         </div>
         <div class="photo-item">
             <img src="img/sharky2.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">klo ini ga lucu. buang aja gapapa</div>
         </div>
         <div class="photo-item">
             <img src="img/kamar4.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">di foto ini cmn ada sharky sama lu ya ya Allah cakep bgt masyaAllah</div>
         </div>
         <div class="photo-item">
             <img src="img/kamar1.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">HAIIII manis sekali boi aduh</div>
         </div>
         <div class="photo-item">
             <img src="img/kamar2.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">ini game apa ya</div>
         </div>
         <div class="photo-item">
             <img src="img/kamar3.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">masyaAllah masyaAllah masyaAllah</div>
         </div>
         <div class="photo-item">
             <img src="img/kamar5.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">kasian sharky dibenyek2in mulu</div>
         </div>
         <div class="photo-item">
             <img src="img/kamar6.jpg" alt="Thumbs Up">
-            <div class="overlay">Thumbs Up</div>
+            <div class="overlay">weits kok ini fotonya kosong gt ya. ada sharky ngapung gitu</div>
         </div>
     </div>
 
