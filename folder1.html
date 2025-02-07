@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Musim Exam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 23px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #2471A3;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 30px;
+            font-family: 'Unbounded', cursive;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+            gap: 15px;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Overlay */
+        .photo-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Dark layer */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .photo-item:hover .overlay {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Musim Exam</h1>
+        <p>Because in the midst of all the stress, I know I can turn to you for comfort.</p>
+    </header>
+
+    <div class="photo-gallery">
+        <div class="photo-item">
+            <img src="img/car.jpg" alt="Cover Photo">
+            <div class="overlay">cakep bgt anak mama rika</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/bunga.jpg" alt="Beautiful Flower">
+            <div class="overlay">Beautiful Flower</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/bungar.jpg" alt="Red Flower">
+            <div class="overlay">Red Flower</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/cover.jpg" alt="Classic Car">
+            <div class="overlay">Classic Car</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/belajar.jpg" alt="Shark Model">
+            <div class="overlay">Shark Model</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/jempol.jpg" alt="Shark Close-up">
+            <div class="overlay">Shark Close-up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/jempolpucks.jpg" alt="Studying Hard">
+            <div class="overlay">Studying Hard</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/kopi.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/pucks.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/leha.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/basrob.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/basrob2.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/beans.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/hotbird.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/hotbirdar.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/jempol3.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/sharky.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/sharky2.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/kamar4.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/kamar1.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/kamar2.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/kamar3.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/kamar5.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+        <div class="photo-item">
+            <img src="img/kamar6.jpg" alt="Thumbs Up">
+            <div class="overlay">Thumbs Up</div>
+        </div>
+    </div>
+
+</body>
+</html>

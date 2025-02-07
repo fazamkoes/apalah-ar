@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Archives</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 23px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #2471A3;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 30px;
+            font-family: 'Helvetica Neue', Arial, sans-serif; /* Matches the home page header font */
+        }
+
+        .folders-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .folder {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            max-width: 200px;
+        }
+
+        .folder:hover {
+            transform: scale(1.05);
+        }
+
+        .folder img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .folder p {
+            font-weight: bold;
+            color: #1A5276;
+            margin-top: 10px;
+        }
+
+        footer {
+            bottom: 0;
+            width: 100%;
+            background-color: #2471A3;
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        footer p{
+            margin: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Archives</h1>
+    </header>
+    
+    <main>
+        <section class="folders-container">
+            <div class="folder" onclick="openFolder('folder1')">
+                <img src="img/folder1-preview.jpg" alt="Folder 1 Preview">
+                <p>Folder 1: 310125</p>
+            </div>
+            <div class="folder" onclick="openFolder('folder2')">
+                <img src="img/folder2-preview.jpg" alt="Folder 2 Preview">
+                <p>Folder 2: xxx</p>
+            </div>
+            <div class="folder" onclick="openFolder('folder3')">
+                <img src="img/folder3-preview.jpg" alt="Folder 3 Preview">
+                <p>Folder 3: xxx</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>test</p>
+    </footer>
+    
+    <script>
+        function openFolder(folderName) {
+            window.location.href = folderName + ".html";
+        }
+    </script>
+</body>
+</html>
