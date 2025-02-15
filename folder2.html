@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hari Konyol</title>
+    <link rel="icon" href="img/ar-16.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 23px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #2471A3;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 30px;
+            font-family: 'Unbounded', cursive;
+        }
+
+        header p {
+            color: white;
+            margin-top: -5px;
+            font-size: 14px;
+            max-width: 60%; /* Adjust width as needed */
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Overlay */
+        .photo-item .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            padding: 5px;
+            text-align: center;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .photo-item:hover .overlay {
+            opacity: 1;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hari Konyol</h1>
+        <p>Walaupun byk paniknya, gw seneng bisa ngejalanin semuanya brg lu. Truth be told, I wouldn't mind going through it all again so long as I had you. And in all honesty, I wouldn't have had it any other way. Makasih ya udah selalu ada.</p>
+    </header>
+
+    <div class="photo-gallery">
+        <div class="photo-item" onclick="openLightbox('img/ar-1.jpg')">
+            <img src="img/ar-1.jpg" alt="Cover Photo">
+            <div class="overlay">gw dan si ganteng yg luka2</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-8.jpg')">
+            <img src="img/ar-8.jpg" alt="Beautiful Flower">
+            <div class="overlay">ini branco kebanting sama kecakepan lu ar</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-5.jpg')">
+            <img src="img/ar-5.jpg" alt="Red Flower">
+            <div class="overlay">klo pake bahasa lu, ini branco lagi gimmick doang</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-4.jpg')">
+            <img src="img/ar-4.jpg" alt="Classic Car">
+            <div class="overlay">gimmicknya dari semua angle gt</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-3.jpg')">
+            <img src="img/ar-3.jpg" alt="Shark Model">
+            <div class="overlay">manusia cakep main gitar lalu saya seakan2 sedang digonjreng2 hatinya olehmu anjay</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-9.jpg')">
+            <img src="img/ar-9.jpg" alt="Shark Close-up">
+            <div class="overlay">lucu deh ini sumpah</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-10.jpg')">
+            <img src="img/ar-10.jpg" alt="Studying Hard">
+            <div class="overlay">nah klo ini lucu + cakep 1000 kali lipat</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-2.jpg')">
+            <img src="img/ar-2.jpg" alt="Thumbs Up">
+            <div class="overlay">kamu serius bgt mukanya ka</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-13.jpg')">
+            <img src="img/ar-13.jpg" alt="Thumbs Up">
+            <div class="overlay">ini kan yg booking cafe trus special request duduk di samping jendela? enak ga?</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-16.jpg')">
+            <img src="img/ar-16.jpg" alt="Thumbs Up">
+            <div class="overlay">jujur gw merasa sangat kurang dgn brg2 yg gw kasih ke lu. maaf ya cmn itu doang. legonya nyusul kokk</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-11.jpg')">
+            <img src="img/ar-11.jpg" alt="Thumbs Up">
+            <div class="overlay">anjay saha ini</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-23.jpg')">
+            <img src="img/ar-23.jpg" alt="Thumbs Up">
+            <div class="overlay">sumpah demi Allah these are the best things ive ever received from anyone. makasih byk ya ar. gw seneng bgt</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-6.jpg')">
+            <img src="img/ar-6.jpg" alt="Thumbs Up">
+            <div class="overlay">si kasepppp. bebek ganteng buatan manusia cakep</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-17.jpg')">
+            <img src="img/ar-17.jpg" alt="Thumbs Up">
+            <div class="overlay">gw megang gitar full gimmick hari itu. aku janji akan bermain lebih hebat lagi depan kamu</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-15.jpg')">
+            <img src="img/ar-15.jpg" alt="Thumbs Up">
+            <div class="overlay">nah mulai kita di foto pertama dari photoshoot manusia cantik ini</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-7.jpg')">
+            <img src="img/ar-7.jpg" alt="Thumbs Up">
+            <div class="overlay">senyum lu wallah... ga bisa aku tuh diginiin</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-14.jpg')">
+            <img src="img/ar-14.jpg" alt="Thumbs Up">
+            <div class="overlay">HAHA PLSPLS INI MANIS BGT???</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-18.jpg')">
+            <img src="img/ar-18.jpg" alt="Thumbs Up">
+            <div class="overlay">dari semua foto yang ada di sini, lu cakep tingkat maksimal di foto ini</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-19.jpg')">
+            <img src="img/ar-19.jpg" alt="Thumbs Up">
+            <div class="overlay">lucu bgt ya Allahhhhh</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-20.jpg')">
+            <img src="img/ar-20.jpg" alt="Thumbs Up">
+            <div class="overlay">rajin2 senyum ya</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-21.jpg')">
+            <img src="img/ar-21.jpg" alt="Thumbs Up">
+            <div class="overlay">innocent bgt muka lau di row terakhir ini</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-22.jpg')">
+            <img src="img/ar-22.jpg" alt="Thumbs Up">
+            <div class="overlay">gw tau ciptaan Allah tuh selalu indah tp ciptaan Allah yg ini melebihi keindahan yg lain</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-12.jpg')">
+            <img src="img/ar-12.jpg" alt="Thumbs Up">
+            <div class="overlay">main hp mulu dih</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/ar-24.jpg')">
+            <img src="img/ar-24.jpg" alt="Thumbs Up">
+            <div class="overlay">zang ini ngeditnya kegelapan hehe maapppp</div>
+        </div>
+        <div class="photo-item" onclick="openLightbox('img/puisi.jpg')">
+            <img src="img/puisi.jpg" alt="Thumbs Up">
+            <div class="overlay">gw nulis ini the day after kita jalan. mau kirim ke lu but i wasnt able to find the right timing. sekali lagi, makasih byk ya ar. makasih udh ada</div>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <script>
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add("active");
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById("lightbox");
+            lightbox.classList.remove("active");
+        }
+    </script>
+
+</body>
+</html>
