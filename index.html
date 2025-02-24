@@ -170,47 +170,45 @@
             <img src="img/photo2.png" alt="Folder 1 Preview">
             <p>Folder 1: Musim Exam</p>
         </div>
-    </div>
 
-    <div class="folders-container">
         <div class="folder" onclick="openFolder('folder2')">
             <img src="img/ar-16.jpg" alt="Folder 2 Preview">
             <p>Folder 2: Hari Konyol</p>
         </div>
     </div>
-    </section>
+</section>
 
-    <style>
-    .archives-container {
+<style>
+.archives-container {
     max-width: 800px;
     margin: 20px auto;
-    padding: 15px; /* Reduce padding */
+    padding: 15px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     text-align: center;
-    }
+}
 
-    .archives-container h2 {
+.archives-container h2 {
     color: #1A5276;
     font-size: 24px;
-    margin-bottom: 5px; /* Reduce bottom margin */
-    }
+    margin-bottom: 5px;
+}
 
-    .archives-container p {
+.archives-container p {
     color: #666;
     font-style: italic;
-    margin-bottom: 15px; /* Reduce space below */
-    }
+    margin-bottom: 15px;
+}
 
-    .folders-container {
+.folders-container {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    }
+}
 
-    .folder {
+.folder {
     background-color: white;
     border-radius: 8px;
     padding: 15px;
@@ -219,23 +217,24 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
     max-width: 200px;
-    }
+    flex: 1 1 calc(33.33% - 20px);
+}
 
-    .folder:hover { 
-    transform: scale(1.05); 
-    }
+.folder:hover {
+    transform: scale(1.05);
+}
 
-    .folder img { 
-    width: 100%; 
-    border-radius: 5px; 
-    }
+.folder img {
+    width: 100%;
+    border-radius: 5px;
+}
 
-    .folder p { 
-    font-weight: bold; 
-    color: #1A5276; 
-    margin-top: 10px; 
-    }
-    </style>
+.folder p {
+    font-weight: bold;
+    color: #1A5276;
+    margin-top: 10px;
+}
+</style>
 
     <section class="playlists-container">
         <h2>Playlists</h2>
@@ -286,6 +285,161 @@
     }
     </style>
 
+    <section class="segment-of-appreciation">
+    <h2>Segment of Appreciation</h2>
+    <p>A moment to appreciate you for the person that you are and all the things you do whether it be for me or others.</p>
+
+    <div class="folders-container">
+        <div class="folder" onclick="openPopup('appreciation1')">
+            <img src="img/ar.nus-1.jpg" alt="Appreciation 1 Preview">
+            <p>Gimmick jam 5 pagi</p>
+        </div>
+    </div>
+
+    <!-- Popup Card -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <img id="popup-image" src="" alt="Popup Image">
+            <h3 id="popup-title"></h3>
+            <p id="popup-message"></p>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Segment Styling */
+.segment-of-appreciation {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.segment-of-appreciation h2 {
+    color: #D35400;
+    font-size: 24px;
+}
+
+.segment-of-appreciation p {
+    color: #444;
+    font-style: italic;
+    font-size: 15px;
+}
+
+/* Folder Styling */
+.folders-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.folder {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    max-width: 200px;
+}
+
+.folder:hover { 
+    transform: scale(1.05); 
+}
+
+.folder img { 
+    width: 100%; 
+    border-radius: 5px; 
+}
+
+.folder p { 
+    font-weight: bold; 
+    color: #D35400; 
+    margin-top: 10px; 
+}
+
+/* Popup Styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 450px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.popup-content img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.popup-content h3 {
+    color: #D35400;
+}
+
+.popup-content p {
+    color: #333;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+</style>
+
+<script>
+function openPopup(folder) {
+    let title, message, imageSrc;
+    
+    if (folder === 'appreciation1') {
+        title = "Gimmick jam 5 pagi";
+        message = "hai haiii, khusus di segment ini, aku ga terlalu serius ya bahasanyaa (tp ttp aja semua yg aku katakan, i mean all of it kokk). pertama-tama, aku makasih bgtt krn kamu udh mau nemenin aku di hari ini. mulai dari bangun jam 4 pagi, jalan beribu2 steps, minjemin mobil, dll lahhh. aku juga minta maaf karena yg awalnya kamu seharusnya bantu aku nyetir mobil, kamu malah jd ga ngapa2in sepanjang berjalannya acara. maaf juga yaaa klo kamu bosen di situu. kopinya enak kan tapi? kedua, aku minta maaf juga karena ga ngingetin untuk pake alas kaki yg nyaman. aku udh nyoba utk siapin keperluan apa aja yg mungkin diperluin dari obat-obatan, selimut, sweater, makan, dll. tp semuanya jd ga kepake dan yg dibutuhin malah ga kebawa. maaf yaaa. aku harap kamu ga keberatan dan ga nyesel krn udh iyain aku utk nemenin di hari ini. makasih lagi yaaa. aku seneng bgt krn udh ditemenin kamuuu";
+        imageSrc = "img/ar.nus-1.jpg";
+    } else if (folder === 'appreciation2') {
+        title = "Your Strength";
+        message = "The way you handle challenges with courage and resilience is something I deeply admire.";
+        imageSrc = "img/strength.jpg";
+    } else if (folder === 'appreciation3') {
+        title = "Your Laughter";
+        message = "Your laughter is contagious, and every moment with you is filled with joy and warmth.";
+        imageSrc = "img/laughter.jpg";
+    }
+
+    document.getElementById("popup-title").innerText = title;
+    document.getElementById("popup-message").innerText = message;
+    document.getElementById("popup-image").src = imageSrc;
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
     <footer>
         <p>&copy; 2025 Apasi Ar. All rights reserved.</p>
     </footer>
@@ -301,5 +455,6 @@
             window.location.href = folderName + ".html";
         }
     </script>
+
 </body>
 </html>
